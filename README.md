@@ -12,12 +12,12 @@ Prédiction des résultats de matchs internationaux de rugby à l'aide de modèl
 
 ## 📋 Table des matières
 
-1. [À propos du projet](#à-propos-du-projet)
-2. [Structure du projet](#structure-du-projet)
-3. [Pipeline de Machine Learning](#pipeline-de-machine-learning)
-4. [Installation et Prérequis](#installation-et-prérequis)
-5. [Utilisation](#utilisation)
-6. [Interface Web](#interface-web)
+1. [À propos du projet](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#-%C3%A0-propos-du-projet)
+2. [Structure du projet](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#%EF%B8%8F-structure-du-projet)
+3. [Pipeline de Machine Learning](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#%EF%B8%8F-pipeline-de-machine-learning)
+4. [Installation et Prérequis](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#%EF%B8%8F-installation-et-pr%C3%A9requis)
+5. [Utilisation](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#-utilisation)
+6. [Interface Web](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#-interface-web)
 
 ---
 
@@ -109,6 +109,7 @@ python predict.py
 python export_predictions.py
 
 ```
+---
 
 ## 🌐 Interface Web
 
@@ -122,6 +123,7 @@ L'interface web permet de consulter de manière ergonomique et interactive les p
 * **Lancement local :**
 Pour visualiser l'interface, tu peux simplement ouvrir le fichier `index.html` dans ton navigateur web ou utiliser un serveur local (comme l'extension *Live Server* sous VS Code).
 
+---
 
 ## ✒️ Author
 
