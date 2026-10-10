@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RWC 2027 · Phases finales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-900:#06214a; --blue-700:#0b3d91; --blue-500:#1e63d6; --blue-100:#e4eefc;
+  --green-600:#0e9f6e; --green-500:#17b57f; --green-100:#dff6ec;
+  --ink:#0f1b33; --muted:#5b6b88; --line:#dbe4f2; --bg:#f5f8fd; --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;letter-spacing:.02em}
+
+.hero{background:linear-gradient(135deg,var(--blue-900),var(--blue-700) 70%);color:#fff;padding:44px 20px 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,var(--green-600),var(--green-500) 50%,#fff)}
+.hero .in{max-width:1180px;margin:0 auto}
+.tabs{display:flex;gap:8px;margin-bottom:22px}
+.tabs a{color:#fff;text-decoration:none;font:700 15px 'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.3)}
+.tabs a.on{background:var(--green-500);border-color:var(--green-500)}
+.tabs a:hover{background:rgba(255,255,255,.15)}
+.tabs a.on:hover{background:var(--green-500)}
+.eyebrow{font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:#9fd9c3}
+.hero h1{font-size:clamp(38px,7vw,68px);font-weight:800;line-height:1;margin:8px 0 10px;text-transform:uppercase}
+.hero h1 span{color:var(--green-500)}
+.hero p{max-width:640px;color:#c9d8f3}
+
+main{max-width:1280px;margin:-28px auto 60px;padding:0 16px;position:relative;z-index:1}
+.bar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;box-shadow:0 6px 20px rgba(11,61,145,.08)}
+.src{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--green-500)}
+.dot.demo{background:#e0a100}
+.modes{display:flex;gap:6px;flex-wrap:wrap}
+.modes button{font:600 14px 'Barlow',sans-serif;border:1px solid var(--line);background:#fff;color:var(--blue-700);padding:7px 14px;border-radius:8px;cursor:pointer}
+.modes button:hover{background:var(--blue-100)}
+.modes button.on{background:var(--blue-700);border-color:var(--blue-700);color:#fff}
+.modes button.go{background:var(--green-600);border-color:var(--green-600);color:#fff}
+.modes button.go:hover{background:var(--green-500)}
+
+section.block{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 10px rgba(11,61,145,.05);overflow:hidden}
+.block-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:14px 20px;background:linear-gradient(90deg,var(--blue-700),var(--blue-500));color:#fff}
+.block-h h2{font-size:26px;font-weight:800;text-transform:uppercase}
+.block-h small{color:#cfe0ff;font-size:13px}
+
+/* Champion banner */
+.champ{display:flex;align-items:center;gap:16px;padding:18px 20px;background:linear-gradient(90deg,var(--green-100),#fff);border-bottom:1px solid var(--line)}
+.champ .badge{width:54px;height:54px;font-size:18px}
+.champ b{font:800 30px 'Barlow Condensed',sans-serif;text-transform:uppercase;display:block;line-height:1.05}
+.champ small{color:var(--muted);font-size:13px}
+
+/* Bracket */
+.scroll{overflow-x:auto;padding:18px 16px 22px}
+.bracket{display:grid;grid-template-columns:repeat(7,minmax(150px,1fr));gap:10px;min-width:1130px;align-items:stretch}
+.col{display:flex;flex-direction:column;justify-content:space-around;gap:12px}
+.col h4{font:700 13px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-align:center;margin-bottom:2px}
+.colwrap{display:flex;flex-direction:column}
+.colwrap .col{flex:1}
+.mc{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 1px 4px rgba(11,61,145,.06)}
+.mc.final{border:2px solid var(--green-500);box-shadow:0 4px 14px rgba(23,181,127,.2)}
+.t{display:grid;grid-template-columns:26px 1fr auto;gap:6px;align-items:center;padding:6px 9px;font-size:13px;border-bottom:1px solid #eef2f9}
+.t:last-of-type{border-bottom:0}
+.t .badge{width:26px;height:26px;font-size:10px}
+.t .nm{font-weight:500;line-height:1.15}
+.t .nm i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.t em{font-style:normal;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+.t.win{background:var(--green-100)}
+.t.win .nm{font-weight:700}
+.t.win em{color:#08754f;font-weight:700}
+.badge{border-radius:50%;background:var(--blue-100);color:var(--blue-700);font:700 11px 'Barlow Condensed',sans-serif;letter-spacing:.04em;display:grid;place-items:center;border:1.5px solid #c5d8f6}
+.t.win .badge{background:var(--green-500);color:#fff;border-color:var(--green-500)}
+.mid{justify-content:center}
+.mid .trophy{text-align:center;font:800 15px 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);margin-bottom:6px}
+
+/* Odds table */
+.odds{padding:6px 0 10px}
+.orow{display:grid;grid-template-columns:30px 150px repeat(5,1fr);gap:8px;align-items:center;padding:8px 20px;border-bottom:1px solid #eef2f9;font-size:14px}
+.orow:last-child{border-bottom:0}
+.orow.head{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.orow .badge{width:28px;height:28px;font-size:10px}
+.orow .nm{font-weight:600}
+.cell{position:relative;height:22px;background:#eef3fb;border-radius:5px;overflow:hidden;min-width:48px}
+.cell i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--blue-500),var(--blue-700));opacity:.85}
+.cell.w i{background:linear-gradient(90deg,var(--green-500),var(--green-600));opacity:1}
+.cell span{position:relative;z-index:1;display:flex;align-items:center;height:100%;padding-left:7px;font:700 12px 'Barlow',sans-serif;color:#fff;mix-blend-mode:normal;text-shadow:0 0 3px rgba(6,33,74,.55)}
+.cell.low span{color:var(--ink);text-shadow:none;justify-content:flex-end;padding:0 7px 0 0}
+
+.foot{margin-top:24px;font-size:13px;color:var(--muted);max-width:820px}
+@media (max-width:760px){.orow{grid-template-columns:28px 1fr repeat(5,46px);padding:8px 10px;font-size:12px}.orow .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="in">
+    <nav class="tabs"><a href="index.html">Poules</a><a class="on" href="knockout.html">Phases finales</a></nav>
+    <div class="eyebrow">Huitièmes · Quarts · Demies · Finale</div>
+    <h1>Du tableau à la <span>finale</span></h1>
+    <p>Pour la première fois, la Coupe du Monde commence ses phases finales par des huitièmes de finale : 16 équipes, dont les quatre meilleurs troisièmes.</p>
+  </div>
+</header>
+
+<main>
+  <div class="bar">
+    <div class="src"><span class="dot" id="dot"></span><span id="srcTxt"></span></div>
+    <div class="modes">
+      <button id="bFav" class="on">Projection (favoris)</button>
+      <button id="bRnd">Tirage aléatoire</button>
+      <button id="bGo" class="go" style="display:none">Relancer un tournoi</button>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="block-h"><h2>Tableau final</h2><small id="bnote"></small></div>
+    <div class="champ" id="champ"></div>
+    <div class="scroll"><div class="bracket" id="bracket"></div></div>
+  </section>
+
+  <section class="block">
+    <div class="block-h"><h2>Chances par tour</h2><small>Simulation de 5 000 tournois complets</small></div>
+    <div class="odds" id="odds"></div>
+  </section>
+
+  <p class="foot">Méthode : les poules sont simulées match par match (4 points par victoire, égalités tirées au hasard, sans bonus ni confrontations directes), puis les 4 meilleurs troisièmes sont retenus. Les adversaires des vainqueurs des poules A à D suivent les règles officielles connues (3e de A contre 1er de C, 3e de B contre 1er de D, 3e de C contre 1er de A, 3e de D contre 1er de B) ; les troisièmes des poules E et F occupent les places restantes. Quand E et F sont tous deux qualifiés, le tableau officiel des 15 combinaisons n'est pas reproduit ici : l'ordre est approché. Chaque match à élimination directe utilise la probabilité de victoire du modèle (pas de match nul). Australie considérée à domicile.</p>
+</main>
+
+<script src="predictions.js" onerror="void 0"></script>
+<script src="common.js"></script>
+<script>
+const pct = x => Math.round(x*100)+"%";
+const pct1 = x => (x*100).toFixed(x<0.1&&x>0?1:0)+"%";
+let mode = "fav";
+
+const team = (t, lab, p, win) => `
+  <div class="t ${win?'win':''}">
+    <div class="badge">${CODE[t]}</div>
+    <div class="nm">${FR[t]}<i>${lab}</i></div>
+    <em>${pct(p)}</em>
+  </div>`;
+const card = (m, cls="") => `<div class="mc ${cls}">${team(m.a,m.la,m.pa,m.winner===m.a)}${team(m.b,m.lb,1-m.pa,m.winner===m.b)}</div>`;
+const col = (title, items, cls="") => `<div class="colwrap"><h4>${title}</h4><div class="col ${cls}">${items.join("")}</div></div>`;
+
+function render(){
+  const t = runTournament(mode);
+  const {r16,qf,sf,final} = t;
+  const left = [
+    col("Huitièmes", r16.slice(0,4).map(m=>card(m))),
+    col("Quarts", qf.slice(0,2).map(m=>card(m))),
+    col("Demie", [card(sf[0])])
+  ];
+  const mid = `<div class="colwrap"><h4>Finale</h4><div class="col mid"><div class="trophy">Finale</div>${card(final,"final")}</div></div>`;
+  const right = [
+    col("Demie", [card(sf[1])]),
+    col("Quarts", qf.slice(2).map(m=>card(m))),
+    col("Huitièmes", r16.slice(4).map(m=>card(m)))
+  ];
+  document.getElementById("bracket").innerHTML = left.join("")+mid+right.join("");
+
+  const c = t.champion, runner = final.a===c ? final.b : final.a;
+  document.getElementById("champ").innerHTML =
+    `<div class="badge" style="background:var(--green-500);color:#fff;border-color:var(--green-500)">${CODE[c]}</div>
+     <div><b>${FR[c]}</b><small>${mode==="fav"?"Championne projetée":"Championne de ce tirage"} · finale contre ${FR[runner]} (${pct(final.winner===final.a?final.pa:1-final.pa)} de victoire)</small></div>`;
+
+  const q = t.qual.map(x=>`${FR[x.team]} (${x.pool}3)`).join(", ");
+  document.getElementById("bnote").textContent = "Meilleurs troisièmes : "+q;
+}
+
+function renderOdds(){
+  const mc = monteCarlo(5000);
+  const rows = ALL_TEAMS.slice().sort((a,b)=>mc[b].w-mc[a].w||mc[b].f-mc[a].f);
+  const cell = (v, w) => {
+    const low = v < 0.18;
+    return `<div class="cell ${w?'w':''} ${low?'low':''}"><i style="width:${Math.round(v*100)}%"></i><span>${pct1(v)}</span></div>`;
+  };
+  document.getElementById("odds").innerHTML =
+    `<div class="orow head"><span></span><span>Équipe</span><span>8es</span><span>Quarts</span><span>Demies</span><span>Finale</span><span>Titre</span></div>` +
+    rows.map(tm=>`<div class="orow">
+      <div class="badge">${CODE[tm]}</div><div class="nm">${FR[tm]}</div>
+      ${cell(mc[tm].r16)}${cell(mc[tm].qf)}${cell(mc[tm].sf)}${cell(mc[tm].f)}${cell(mc[tm].w,true)}
+    </div>`).join("");
+}
+
+/* Boutons */
+const bFav = document.getElementById("bFav"), bRnd = document.getElementById("bRnd"), bGo = document.getElementById("bGo");
+function setMode(m){
+  mode = m;
+  bFav.classList.toggle("on", m==="fav"); bRnd.classList.toggle("on", m==="random");
+  bGo.style.display = m==="random" ? "" : "none";
+  render();
+}
+bFav.onclick = ()=>setMode("fav");
+bRnd.onclick = ()=>setMode("random");
+bGo.onclick = render;
+
+document.getElementById("dot").classList.toggle("demo", !usingModel);
+document.getElementById("srcTxt").textContent = usingModel
+  ? "Probabilités issues de ton modèle (model_rugby.pkl)"
+  : "Estimation de démonstration — lance export_predictions.py pour afficher les prédictions de ton modèle";
+
+render();
+renderOdds();
+</script>
+</body>
+</html>
