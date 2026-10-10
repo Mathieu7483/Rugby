@@ -1,5 +1,6 @@
-"""Exporte les probabilités de victoire du modèle pour tous les matchs de poule
-de la Coupe du Monde 2027 vers web/predictions.js (lu par web/index.html).
+"""Exporte les probabilités de victoire du modèle pour toutes les paires
+des 24 équipes de la Coupe du Monde 2027 (poules + phases finales) vers
+web/predictions.js (lu par web/index.html et web/knockout.html).
 
 Usage : python export_predictions.py
 Prérequis : model_rugby.pkl (généré par train_and_save.py) et data/rugby.db
@@ -67,22 +68,23 @@ def main():
     stats = load_team_stats("data/rugby.db").set_index("team")
     available = set(stats.index)
 
+    # Toutes les paires possibles (poules + phases finales)
+    teams_all = [t for teams in POOLS.values() for t in teams]
     out, missing = {}, []
-    for pool, teams in POOLS.items():
-        for i in range(len(teams)):
-            for j in range(i + 1, len(teams)):
-                a, b = teams[i], teams[j]
-                da, db = resolve(a, available), resolve(b, available)
-                if not da or not db:
-                    missing += [t for t, d in ((a, da), (b, db)) if not d]
-                    continue
-                out[f"{a}|{b}"] = round(p_team_a_wins(model, stats, da, db), 4)
+    for i in range(len(teams_all)):
+        for j in range(i + 1, len(teams_all)):
+            a, b = teams_all[i], teams_all[j]
+            da, db = resolve(a, available), resolve(b, available)
+            if not da or not db:
+                missing += [t for t, d in ((a, da), (b, db)) if not d]
+                continue
+            out[f"{a}|{b}"] = round(p_team_a_wins(model, stats, da, db), 4)
 
     os.makedirs("web", exist_ok=True)
     with open("web/predictions.js", "w", encoding="utf-8") as f:
         f.write("window.PREDICTIONS = " + json.dumps(out, indent=1) + ";\n")
 
-    print(f"{len(out)} matchs exportés vers web/predictions.js")
+    print(f"{len(out)} paires exportées vers web/predictions.js")
     if missing:
         print("Équipes absentes de la base (estimation de secours utilisée) :",
               ", ".join(sorted(set(missing))))
