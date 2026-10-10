@@ -116,7 +116,7 @@ python export_predictions.py
 L'interface web permet de consulter de manière ergonomique et interactive les prédictions générées par les modèles de Machine Learning.
 
 * **Fichiers clés :**
-* `index.html` : La page principale structurant l'affichage des rencontres et des probabilités.
+* `web/index.html` : La page principale structurant l'affichage des rencontres et des probabilités.
 * `web/predictions.js` : Le script front-end qui récupère, structure et dynamise l'affichage des données exportées par le pipeline Python.
 
 
