@@ -12,12 +12,12 @@ Prédiction des résultats de matchs internationaux de rugby à l'aide de modèl
 
 ## 📋 Table des matières
 
-1. [À propos du projet](https://www.google.com/search?q=%23%C3%A0-propos-du-projet)
-2. [Structure du projet](https://www.google.com/search?q=%23structure-du-projet)
-3. [Pipeline de Machine Learning](https://www.google.com/search?q=%23pipeline-de-machine-learning)
-4. [Installation et Prérequis](https://www.google.com/search?q=%23installation-et-pr%C3%A9requis)
-5. [Utilisation](https://www.google.com/search?q=%23utilisation)
-6. [Interface Web](https://www.google.com/search?q=%23interface-web)
+1. [À propos du projet](#à-propos-du-projet)
+2. [Structure du projet](#structure-du-projet)
+3. [Pipeline de Machine Learning](#pipeline-de-machine-learning)
+4. [Installation et Prérequis](#installation-et-prérequis)
+5. [Utilisation](#utilisation)
+6. [Interface Web](#interface-web)
 
 ---
 
