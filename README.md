@@ -60,7 +60,7 @@ mathieu7483-rugby/
 
 ## 🛠️ Installation et Prérequis
 
-Assure-toi d'avoir **Python (>= 3.8)** installé sur ta machine.
+Assurez vous d'avoir **Python (>= 3.8)** installé sur votre machine.
 
 1. Clone le dépôt :
 ```bash
@@ -70,7 +70,7 @@ cd Rugby-Predictor-WC2027
 ```
 
 
-2. Crée et active un environnement virtuel :
+2. Créez et activez un environnement virtuel :
 ```bash
 python -m venv venv
 source venv/bin/activate  # Sur Windows : venv\Scripts\activate
@@ -78,7 +78,7 @@ source venv/bin/activate  # Sur Windows : venv\Scripts\activate
 ```
 
 
-3. Installe les dépendances nécessaires (selon ton projet) :
+3. Installez les dépendances nécessaires (selon votre projet) :
 ```bash
 pip install -r requirements.txt
 
