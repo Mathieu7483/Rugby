@@ -1,0 +1,17 @@
+# Core data manipulation and numerical analysis
+
+numpy>=1.22.0
+
+pandas>=1.4.0
+
+
+
+# Machine Learning models and preprocessing
+
+scikit-learn>=1.0.0
+
+
+
+# Serialization / Model persistence (often used alongside scikit-learn or custom pipelines)
+
+joblib>=1.1.0
