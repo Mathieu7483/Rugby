@@ -30,15 +30,20 @@ Ce projet vise à modéliser et prédire l'issue des rencontres internationales 
 ## 🗂️ Structure du projet
 
 ```text
-mathieu7483-rugby/
-├── README.md
-├── export_predictions.py
-├── index.html
-├── predict.py
-├── train_and_save.py
-├── train_model.py
-└── web/
-    └── predictions.js
+Directory structure:
+└── mathieu7483-rugby/
+    ├── README.md
+    ├── export_predictions.py
+    ├── predict.py
+    ├── requirements.txt
+    ├── train_and_save.py
+    ├── train_model.py
+    └── web/
+        ├── common.js
+        ├── finale.html
+        ├── index.html
+        └── predictions.js
+
 
 ```
 
