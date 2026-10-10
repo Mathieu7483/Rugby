@@ -11,7 +11,6 @@ Prédiction des résultats de matchs internationaux de rugby à l'aide de modèl
 ---
 
 ## 📋 Table des matières
-
 1. [À propos du projet](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#-%C3%A0-propos-du-projet)
 2. [Structure du projet](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#%EF%B8%8F-structure-du-projet)
 3. [Pipeline de Machine Learning](https://github.com/Mathieu7483/Rugby-Predictor-WC2027#%EF%B8%8F-pipeline-de-machine-learning)
@@ -48,7 +47,8 @@ Directory structure:
 * **`train_model.py` / `train_and_save.py**` : Scripts dédiés au chargement du dataset historique, au traitement des données (feature engineering), à l'entraînement et à la persistance du modèle de Machine Learning.
 * **`predict.py`** : Script d'inférence permettant de générer des prédictions sur de nouvelles confrontations.
 * **`export_predictions.py`** : Exporte les résultats et probabilités calculés pour les rendre exploitables par l'interface web.
-* **`web/index.html` & `web/predictions.js**` : Interface front-end interactive permettant de visualiser les prédictions.
+* **`web/index.html` & `web/finale.html**` : Pages principales structurant l'affichage des rencontres, des probabilités et du tableau complet des phases finales (8èmes, quarts, demi-finales et finale).
+* **`web/`** : Contient les scripts front-end (dont `common.js` pour la mutualisation du code et `predictions.js`) qui récupèrent, structurent et dynamisent l'affichage des données.
 
 ---
 
@@ -67,7 +67,7 @@ Assurez vous d'avoir **Python (>= 3.8)** installé sur votre machine.
 
 1. Clonez le dépôt :
 ```bash
-git clone https://github.com/Mathieu7483/Rugby-Predictor-WC2027.git
+git clone [https://github.com/Mathieu7483/Rugby-Predictor-WC2027.git](https://github.com/Mathieu7483/Rugby-Predictor-WC2027.git)
 cd Rugby-Predictor-WC2027
 
 ```
@@ -81,7 +81,7 @@ source venv/bin/activate  # Sur Windows : venv\Scripts\activate
 ```
 
 
-3. Installez les dépendances nécessaires (selon votre projet) :
+3. Installez les dépendances nécessaires :
 ```bash
 pip install -r requirements.txt
 
@@ -119,12 +119,14 @@ python export_predictions.py
 L'interface web permet de consulter de manière ergonomique et interactive les prédictions générées par les modèles de Machine Learning.
 
 * **Fichiers clés :**
-* `web/index.html` : La page principale structurant l'affichage des rencontres et des probabilités.
+* `web/index.html` : La page d'accueil et de consultation globale des rencontres et probabilités.
+* `web/finale.html` : La page dédiée aux phases finales de la compétition (8èmes de finale, quarts de finale, demi-finales et finale) structurées sous forme de tableaux interactifs.
+* `web/common.js` : Le script mutualisé gérant les fonctions transverses et l'ergonomie commune des pages.
 * `web/predictions.js` : Le script front-end qui récupère, structure et dynamise l'affichage des données exportées par le pipeline Python.
 
 
 * **Lancement local :**
-Pour visualiser l'interface, tu peux simplement ouvrir le fichier `index.html` dans ton navigateur web ou utiliser un serveur local (comme l'extension *Live Server* sous VS Code).
+Pour visualiser l'interface, vous pouvez simplement ouvrir `index.html` ou `finale.html` dans votre navigateur web, ou utiliser un serveur local (comme l'extension *Live Server* sous VS Code).
 
 ---
 
