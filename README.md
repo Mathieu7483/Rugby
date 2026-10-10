@@ -43,8 +43,6 @@ Directory structure:
         ├── finale.html
         ├── index.html
         └── predictions.js
-
-
 ```
 
 * **`train_model.py` / `train_and_save.py**` : Scripts dédiés au chargement du dataset historique, au traitement des données (feature engineering), à l'entraînement et à la persistance du modèle de Machine Learning.
