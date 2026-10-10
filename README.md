@@ -48,7 +48,7 @@ Directory structure:
 * **`train_model.py` / `train_and_save.py**` : Scripts dédiés au chargement du dataset historique, au traitement des données (feature engineering), à l'entraînement et à la persistance du modèle de Machine Learning.
 * **`predict.py`** : Script d'inférence permettant de générer des prédictions sur de nouvelles confrontations.
 * **`export_predictions.py`** : Exporte les résultats et probabilités calculés pour les rendre exploitables par l'interface web.
-* **`index.html` & `web/predictions.js**` : Interface front-end interactive permettant de visualiser les prédictions.
+* **`web/index.html` & `web/predictions.js**` : Interface front-end interactive permettant de visualiser les prédictions.
 
 ---
 
