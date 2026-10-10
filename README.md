@@ -62,7 +62,7 @@ mathieu7483-rugby/
 
 Assurez vous d'avoir **Python (>= 3.8)** installé sur votre machine.
 
-1. Clone le dépôt :
+1. Clonez le dépôt :
 ```bash
 git clone https://github.com/Mathieu7483/Rugby-Predictor-WC2027.git
 cd Rugby-Predictor-WC2027
